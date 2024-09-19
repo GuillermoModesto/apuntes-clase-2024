@@ -74,13 +74,13 @@ Para abrir carpeta de proyecto desde consola:
 
 -Comentarios shortcut: CTRL + ç
 
--Bootstraps -> estilos de CSS y JS. Hay dos maneras de usarlo, descargar y añadir carpeta al proyecto (recomendado) o añadir etiqueta de CDN de la página.
+-Bootstraps -> estilos de CSS y JS. Hay dos maneras de usarlo, descargar y añadir carpeta al proyecto (recomendado) o añadir etiqueta de  CDN de la página.
 CDN es una forma de comunicarse con los recursos que se quieren usando enlaces.
 
-Para hacerlo habiendose descargado el recurso:
-	Ruta relativa a la carpeta en la que tenemos el bootstrap, y usar el min
-	<link href="./bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet"/>
-
+Para hacerlo habiendose descargado el recurso, usamos la ruta relativa a la carpeta en la que tenemos el bootstrap.
+	<link href="./bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet"/> || min en estilos
+	<script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script> || bundle.min en scripts
+	
 Para hacerlo usando el CDN:
 	La página es : https://getbootstrap.com/docs/5.3/getting-started/download/#cdn-via-jsdelivr
 	Las etiquetas son algo parecido a esto:
@@ -97,3 +97,46 @@ Para hacerlo usando el CDN:
   	  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
   	  crossorigin="anonymous"
   	></script>
+
+A través del siguiente link puedo ver todo lo que puede hacer bootstrap y un ejemplo (muy útil)
+	https://getbootstrap.com/docs/5.3/components/
+
+-Difiniendo estilos: propiedades / valores
+	Selector de sintaxis: color/background-color/font-size.......
+	Cajas: padding (relleno, espacio al redecor del contenido), border (marco, linea fuera del relleno), margin (margen, espacio fuera de lo anterior)
+
+En la etiqueta font-family ocurre lo siguiente:
+	p{
+            font-family: Arial, Helvetica, sans-serif; -> si no existe Arial, usa Helvetica, si no sans-serif,
+        }
+
+-Selectores básicos:
+	* -----------------> todo
+	etiqueta ----------> la etiqueta
+	.class1 -----------> la clase class1
+	#id1 --------------> el id id1
+	sel1 sel2 ---------> selectores de sel2 que estan dentro de sel1
+	.class1.class2 ----> selectores con las dos clases
+	sel1.class1 -------> todos los selectores sel1 con clase class1
+	sel1, sel2 --------> todos los selectores incluidos con las comas
+	sel1 > sel2 -------> selectores sel2 que sean hijos de sel1
+	sel1 + sel2 -------> selectores sel2 que sean hermanos (mismo padre) de sel1
+
+-Unidades de medida:
+Relativas:
+	px --------> pixeles (relativo al dispositivo)
+	em --------> relativo al tamaño de la fuente del elemento (2em = 2 * tam fuente actual)
+	% ---------> porcentaje relativo a elemento padre
+	vh y vw ---> medidas relativas de acuerdo al viewport (1vh = 1% altura del viewport)
+Absolutas:
+	in --------> pulgadas (1in = 2.54cm)
+	cm --------> cemtímetros
+	mm --------> milímetros
+	pt --------> puntos (1pt = 1/72 pulgadas)
+	pc --------> picas (1pc = 12 puntos)
+Colores.
+Texto.
+Fuentes.
+Listas.
+Tablas.
+Pseudo-clases para selección de hijos o hermanos (:first-child, :last-of-type...)
