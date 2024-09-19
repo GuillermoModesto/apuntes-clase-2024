@@ -1,0 +1,103 @@
+------------------
+-----CLIENTES-----
+------------------
+
+URL -> https:// www.medac.es /index
+	protocolo[ftp (archivos en general), file, http (todo en texto plano, subceptible a MITM (man in the middle))...]
+	host/dominio (dispositivo gestor ó con la info que quiero, una IP camuflada)
+	recurso (lo que se pide, index por defecto)
+
+Servidor web -> dispositivo que acepta que se conecten clientes (como un navegador de internet) para acceder a su información.
+
+El FrontEnd se ejecuta en el navegador, y el BackEnd en el servidor.
+
+El navegador entiende HTML, CSS y Javascript (frontend).
+
+El servidor entiende PHP, Python, Pearl, JSP (Java)...
+
+Códigos de Respuesta del Servidor: 
+	200 -> todo a salido OK, uso un GET y funciona
+	300 -> el recurso se a movido a otro sitio (301 permanentemente, 302 temporalmente)
+	400 -> el servidor no entiende al cliente, el problema lo tiene el cliente
+		401 -> el cliente no está autorizado a ver/usar ese recurso (se puede conseguir autorización y entrar)
+		403 -> recurso prohibido para el cliente (no se puede entrar de ninguna manera)
+		404 -> recurso no encontrado
+	500 -> error general del servidor, el problema lo tiene el servidor
+		503 -> servidor no operativo (sacaio)
+
+https://developer.mozilla.org/es/docs/HTTP/status -> aquí hay info extra de códigos de respuesta del servidor
+
+Framework -> estructura (plantilla y directorios) ya construida que se usa para organizar proyectos (mas limpio, rapido, eficaz y automatizado en algunas cosas).
+
+API -> heramientas del lenguaje de programación (funciones, clases, objetos...)
+	Internas: ya están incluidas en el lenguaje por defecto.
+	Externas: las importo desde fuera del lenguaje.
+
+------------------
+-----SERVIDOR-----
+------------------
+
+Los archivos en la VM se crearán en /var/www/html
+
+localhost -> es el "home", la casa, el archivo principal del sistema cuando te conectas desde un navegador
+
+El navegador es un intérprete de FrontEnd que lo procesa de forma visual.
+
+loopback, 127.0.01
+
+Internet -> red global de redes de ordenadores interconectados mediante el protocolo TCP/IP
+
+World Wide Web (WWW) -> sistema de páginas web interconectadas a las que se puede acceder a través de internet pediante el protocolo HTTP (HyperText Transfer Protocol).
+	Composición de WWW:
+	-> Protocolo HTTP, encargado de transferir documentos a través de la web (entre el cliente y el servidor).
+	-> Una URL (uniform resource locator) ó URI, que permite acceder a un recurso de la web.
+	-> Documentos HTML, el formato más habitual para publicar contenidos en la web.
+
+Funcionamiento del navegador (cliente): solicitar al servidor los recursos (HTML, documento PDF, audio, video...) web que requiere el usuario y mostrarlos en una ventana.
+La ubicación del recurso se especifica en la URL.
+
+Petición de un recurso con TCP/IP:
+	- El cliente solicita con GET.
+	- El servidor le da el recurso si puede.
+	- El cliente interpreta el código recivido.
+
+Tipos de mensaje en el protocolo HTTP:
+	GET: solicita un recurso al servidor.
+	HEAD: solitica información sobre un recurso al servidor (tamaño, tipo, fecha de última actualización...)
+	POST:envía información al servidor.
+	PUT: actualiza un recurso existente.
+	DELETE: borra un recurso.
+
+Anatomía de una URL:
+http//:www.example.es:80/path/to/my/file?key1=value1&key2=value2#AlgúnPuntoDelDocumento
+	http -> protocolo (scheme)
+	//:
+	www.example.es -> dominio (dispositivo gestor ó con la info que quiero, una IP camuflada)
+	:
+	80 -> puerto (una parte específica dentro del sistema)
+	/path/to/my/file -> la dirección (ruta) de lo que se pide (si no hay nada, es index por defecto) (puede que aparezca la extensión o no)
+	?key1=value1&key2=value2 -> parametros
+	#AlgúnPuntoDelDocumento -> ancla (anchor) Un punto espefífico del documento.
+	
+Aplicación WEB -> una página WEB que permite ejecutar código en el navegador.
+Tipos:
+	Página WEB estática -> archivos que HTML que se envían al cliente sin modificarse (todos los clientes lo verán igual).
+		Esquema de petición
+			Cliente pide al 
+		Coste muy inferior a la dinámica
+		Flexibles
+		Dificiles de mantener.
+		Costoso de añadir contenido o nuevas funcionalidades.
+
+	Página WEB dinámica -> cada cliente redive versiones ligeramente diferentes del mismo archivo.
+		Esquema de petición:
+			Cliente pide al 
+		Gestión de informacion con BBDD
+		Gestión de contenido con CMS
+		Mas faciles y menos costosos de mantener
+		Faltan mas conocimientos tecnicos
+		Requieren mas infraestructura (servidor, BBDD, intérpretes...)
+
+---- Github ----
+- Crear repo nuevo y llamarlo desarrollo-web-servidor
+- (no hay internet, no seguimos avanzando)

@@ -1,0 +1,105 @@
+--------------------
+-----INTERFACES-----
+--------------------
+
+PDF tema 1 (diseño de interfaces web) + diapositivas que subirá el profesor
+
+Interacción ordenador persona (Fig.2. Diagrama de ejemplo de Interfaz IPO)
+
+Product design -> UI Design (al centro), IXD, UX, CX, Service Design (lo mas externo).
+
+	| Product Design (operativo)
+	|	|
+	|	|---UI Design (mas programación)
+	|	|
+	|	|---IXD
+	|	|
+	|	|---UX (compartido con marketing, usar las herramientas de UI)
+	|
+	| Marketing and Experience Design (estratégico)
+	|	|
+	|	|---UX
+	|	|
+	|	|---CX
+	|	|
+	|	|---Service Design
+
+UX -> la expernencia de usuario en un entorno web.
+UI -> interfaz de usuario en una aplicación (apariéncia y estética), la parte mas gráfica del proyecto.
+	Responsabilidades de un diseñadir de UI:
+		-Investigación del "look and feel"
+		-Diseño de la marca y desarrollo gráfico de la misma
+		-Diseño de animaciones y transiciones
+		-Diseño adaptado a dispositivos móviles (RWD)
+
+Pasos para un diseño de interfaces -> usar la información del cliente, diseñar (mockup), construir (prototipos) y validar interfaz.
+
+Maquetación WEB -> cabecera (header), sistemas de navegación, pié de página (footer), cuerpo (Fig.3. Página web con los elementos necesarios de un sitio WEB)
+
+Componentes de un sitio WEB (HTML5, CSS3):
+	body
+	|
+	|---header
+	|
+	|---nav
+	|
+	|---main		   aside
+	|    |			   |  |
+	|    |---section	   |  |
+	|    |    |---article	   |  |
+	|    |_   |---article	   |__|
+	|
+	|---footer
+	|_
+
+SEO on page -> 3 etiquetas a optimizar: URL (bajo impacto en ranking), title (alto impacto en ranking), description (nulo impacto en ranking).
+	Ayudar al robot de google para mejor posicionamiento:	
+		Etiqueta del título, etiqueta meta descripción, atributo Alt de la imagen, metaetiquetas robots Noindex/Nofollow, meta etiquetas Viewport
+
+El color -> RGB, hexadecimal, matiz, saturación, luminosidad...
+
+------------------
+-----SERVIDOR-----
+------------------
+
+(continuación de setup de git)
+---- Github Setup ----
+- Crear repo nuevo y llamarlo desarrollo-web-servidor-2024
+- Crear token de acceso
+	-Perfil/Settings/Developer Settings (lo último de la lista de la izquierda)/Personal access tokens (classic)/Generate new token
+	-Para permitir toquetear el repo, seleccionar en Selected Scopes -> repo
+	-Generate token
+-Introducir comandos de setup
+	echo "desarrollo-web-servidor-2024" >> README.md || (crea archivo README con la info entre "")
+	git init || (crea el repo local)
+	git add README.md || (copia el archivo a una zona intermedia de trabajo en mi sistema)
+	git config --global user.email guillermomodestoanti@gmail.com || (añadir info necesaria para que git sepa donde subir las cosas)
+	git config --global user.name GuillermoModesto  || (añadir info necesaria para que git sepa donde subir las cosas)
+	git commit -m "first commit" || (copia el archivo a una zona del repo online, es como una foto del código en ese momento a la que se puede restaurar el código)
+	git branch -M main || (crear una rama principal en la que trabajar)
+	git remote add origin https://github.com/GuillermoModesto/desarrollo-web-servidor-2024.git || (indicar cual es el repo específico al que quiero subir las cosas)
+	git push -u origin main || (subimos los cambios online y le decimos a git que siempre se va a pushear a la rama main)
+	en el paso anterior habrá que hacer login, usando como pass el token de arriba (no va a aparecer texto al escribir)
+
+-----------------
+-----EMPRESA-----
+-----------------
+
+Camino de la asignatura:
+		--Primer tri--
+	01.La iniciativa emprendedora
+	02.Factores claves del emprendimiento
+	03.El empresario
+	04.Plan de empresa y cultura empresarial
+	05.Análisis del entorno y del mercado
+	06.Marketing y su plan de empresa
+	07.Formas jurídicas de la empresa y trámites de constitución y de inicio de la actividad
+	08.Plan de organización: actividades y recursos
+		--Segundo tri--
+	09.El proceso de producción y análisis de costes
+	10.Contabilidad financiera
+	11.Inversión y financiación
+	12.Gestión fiscal: obligaciones inicialies
+	13.Gestión fiscal: obligaciones periódicas y eventuales
+	14.Gestión administrativa: documentación de compraventa
+	15.Gestión administrativa: documentación de cobro y pago 
