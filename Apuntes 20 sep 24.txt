@@ -1,0 +1,62 @@
+--------------------
+-----SERVIDORES-----
+--------------------
+
+Las tecnologías de desarrollo web se clasifican en función de donde se ejecuta el código,  servidor o cliente.
+
+Tecnologías de cliente:
+	JavaScript
+	HTML
+	CSS
+
+Tecnologías de servidor:
+	PHP
+	.NET
+	JavaEE
+	Ruby on Rails
+	Django
+	Node.js
+
+----PHP----
+
+Lenguaje de uso general que suele usarse en el servidor. En el servidor, el código PHP genera el HTML que enviará al cliente.
+
+Ventajas:
+	Relativamente sencillo.
+	Es de código abierto y libre.
+	Permite generar páginas web dinámicas.
+	La mayoría de los CMS (Content Management System -> WordPress, Joomla...) emplean PHP.
+
+Necesario para usarlo:
+	Servidor web (Apache)
+	Sistema gestor de base de datos (MySQL)
+	Interprete de PHP
+
+Sintaxis:
+	Sensible a mayusculas.
+	Instrucciones terminan en punto y coma.
+	Código delimitado por <?php ...... ?>
+	Comentarios -> // o # y /* */
+	echo / print para mostrar por pantalla
+
+Tipos de variable:
+	int -----> $var = 1
+	float ---> $var = 1.0 || $var = 2e3 (notación científica)
+	string --> $var = "hola" || 'hola' ('' es texto literal, "" puede recoger variables y cosas)
+	bool ----> $var = true
+	array ---> $var = [1,2,3] || $var = array(1,2,3);
+	objeto --> $var = new nombreClase();
+	null ----> $var = null
+
+Mensajes:
+	echo "El mensaje es $mensaje"
+	echo "El mensaje es " . $mensaje
+
+Constantes:
+	define ("NOMBRE", valor);
+
+var_dump($var) -> útil para depurar (devuelve dirección, valor y tipo)
+
+date(); -> manual en : https://www.php.net/manual/es/function.date.php
+
+GitHub de Alejandra para clase -> en la plataforma

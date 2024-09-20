@@ -39,7 +39,7 @@ API -> heramientas del lenguaje de programación (funciones, clases, objetos...)
 
 Los archivos en la VM se crearán en /var/www/html
 
-localhost -> es el "home", la casa, el archivo principal del sistema cuando te conectas desde un navegador
+localhost -> es el "home", la casa, el archivo principal del sistema cuando te conectas desde un navegador (hay que ponerlo en el navegador como búsqueda)
 
 El navegador es un intérprete de FrontEnd que lo procesa de forma visual.
 
