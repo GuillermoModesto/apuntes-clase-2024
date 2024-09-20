@@ -59,4 +59,28 @@ var_dump($var) -> útil para depurar (devuelve dirección, valor y tipo)
 
 date(); -> manual en : https://www.php.net/manual/es/function.date.php
 
-GitHub de Alejandra para clase -> en la plataforma
+GitHub de Alejandra para clase -> https://github.com/Alesa95/desarrollo-web-servidor-2024
+
+-----------------
+-----EMPRESA-----
+-----------------
+
+Emprendimiento y cultura emprendedora -> Iniciativa que tiene una persona para iniciar nuevos retos, convirtiendo una idea en una innovación tangible mediante distintas aptitudes y actitudes.
+
+Aptitud -> capacidades
+Actitud -> disposición
+
+Puede enriquecer a un país: riqueza, promoción e innovación, creación de empleo, fomento del desarrollo sostenible.
+
+Innovación -> proceso que tiene como objetivo introducir elementos nuevos modificando cosas antiguas:
+	Producto
+	Procesos
+	Social
+	Ambiental
+	Organizacion
+	Marketing
+Idea de negocio -> producto o servicio que vamos a ofrecer al mercado para satisfacer las necesidades o deseos de los consumidores, con el propósito de obtener un beneficio económico.
+
+Ideas buenas -> dirigida al cliente ideal, altamente diferencial, satisface una necesidad, rentable, oportuna, factible.
+
+Técnicas para crear ideas -> identificar el mercado, observar el entorno, hobbies, modificar algo que existe, darle nuevo uso a producto nuevo, experiencia personal.
