@@ -31,16 +31,106 @@ int ft_tolower(int c)
     return (c);
 }
 
-//esto creo que está mal
-int ft_strcmp(const char *s1, const char *s2, int n)
+int ft_strncmp(const char *s1, const char *s2, int n)
 {
     int i = 0;
+    n--;
     
     while((i < n) && (s1[i] - s2[i] == 0))
     {
-        printf("%d, %d \n", s1[i], s2[i]);
         i++;
     }
-    i--;
     return (s1[i] - s2[i]);
+}
+
+char *ft_strchr(const char *s, int c)
+{
+    int i = 0;
+    
+    while((s[i] != c) && s[i] != '\0')
+    {
+        i++;
+    }
+    return (&s[i]);
+}
+
+char *ft_strrchr(const char *s, int c)
+{
+    int i = 0;
+    char *ptr;
+    
+    while(s[i] != '\0')
+    {
+        i++;
+        if(s[i] == c)
+        {
+            ptr = &s[i];
+        }
+    }
+    return (ptr);
+}
+
+void *ft_memset(void *s, int c, int n)
+{
+    char *ptr = (char *)s;
+
+    while(n > 0)
+    {
+        *ptr = c;
+	ptr++;
+        n--;
+    }
+    return (s);
+}
+
+void ft_bzero(void *s, int n)
+{
+    char *ptr = (char *) s;
+    
+    while(n > 0)
+    {
+        *ptr = '\0';
+        n--;
+        ptr++;
+    }
+}
+
+void *ft_memcpy(void *dest, const void *src, int n)
+{
+    char *ptr_src = (char *)src;
+    char *ptr_dest = (char *)dest;
+    
+    while(n > 0)
+    {
+        *ptr_dest = *ptr_src;
+        n--;
+        ptr_src++;
+        ptr_dest++;
+    }
+    
+    return (dest);
+}
+
+void *ft_memmove(void *dest, const void *src, int n)
+{
+    char *ptr_src = (char *)src;
+    char *ptr_dest = (char *)dest;
+    char *ptr_aux;
+    int i = 0;
+    
+    while(i < n)
+    {
+        ptr_aux[i] = ptr_src[i];
+        i++;
+    }
+    
+    i = 0;
+    
+    while(i < n)
+    {
+        ptr_dest[i] = ptr_aux[i];
+        i++;
+    }
+    
+    return (dest);
 }
