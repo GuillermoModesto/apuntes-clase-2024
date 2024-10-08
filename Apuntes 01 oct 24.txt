@@ -1,0 +1,37 @@
+------------------
+-----CLIENTES-----
+------------------
+
+JavaScript es mágico. Mirar funciones de arrays en apuntes de Jaime.
+
+Donde está la magia? Los arrays tienen funciones de manera que:
+
+	lista.forEach(function(ele){
+		var res = ele*2;
+		console.log("Elemento actual: "+ele+ " Valor doble: "+res)
+	});
+
+		debajo lo mismo escrito de otra manera
+
+	lista.forEach((ele)=>{
+		var res = ele*2;
+		console.log("Elemento actual: "+ele+ " Valor doble: "+res);
+	});
+
+Eso son funciones callback (funciones como parámetro). Algunas devuelven cosas, otras no.
+
+Los parámetros de un callback están predefinidos de esta manera:
+	SI LA FUNCION NO DEVUELVE NADA
+	lista.nombreFuncion((elemento, posicion, referenciaAlArrayOriginal) => {
+		...cositas que hacer...
+	});
+	SI LA FUNCION SI DEVUELVE ALGO
+	let nuevo = lista.nombreFuncion((elemento, posicion, referenciaAlArrayOriginal) => {
+		...cositas que hacer...
+	}); 
+
+------------------
+-----SERVIDOR-----
+------------------
+
+Apuntes en PHP file

@@ -1,0 +1,41 @@
+-----------------
+-----CLIENTE-----
+-----------------
+
+Arbol DOM: 
+<body>
+|	<div>
+|	|	<header>
+|	|	|	<nav>...</nav>
+|	|	<main>
+|	|	|	texto
+|	|	</main>
+|	|	<footer>...</footer>
+|	</div>
+|	<h1>...</h1>
+</body>
+
+Document -> body --> div --> header --> nav
+		 |	 |-> main --> texto
+		 |	 |-> footer --> texto
+		 |
+		 |-> h1
+
+El código de JS se carga mas rápido que el arbol DOM. Esto puede crear fallos de "no se encuentra esto" o "esto está undefined".
+Para solucionar esto hay dos maneras:
+1. En el archivo .js, la primera línea de código debe ser:
+	window.onload = function(){
+		....
+		....
+	}
+
+	Aquí debajo podemos crear todas las funciones que necesitemos/queramos.
+2. En la etiqueta que llama al script (que SIEMPRE debe estas en el head):
+	<script src="code.js" defer></script>
+
+Moverse por el arbol DOM:
+	let todosLosP = document.getElementsByTagName("p") -> devuelve una colección de todas las etiquetas "p" que hay
+	let todosConNombreTal = document.getElementsByName("tal") -> devuelve una colección de todas las etiquetas con nombre "tal"
+	let todosConClaseTal = document.getElementsClassName("tal") -> devuelve una colección de todas las etiquetas con clase "tal"
+	let todosConIdTal = document.getElementsById("tal") -> devuelve una colección de todas las etiquetas con clase "tal"
+	

@@ -1,0 +1,14 @@
+------------------
+-----CLIENTES-----
+------------------
+
+Funciones de cadenas: .length, .toUpperCase(), .chatAt(pos), indexOf('char'), .substring(pos1, pos2), .split('char'), .replaceAll("original", "reemplazado")
+
+--------------------
+-----INTERFACES-----
+--------------------
+
+Crear una etiqueta directamente con la clase -> div.layout (press enter)
+Crear varias (6 en ejemplo) etiquetas identicas -> div.layout*6
+
+Mirar cosas de FLEX (direction, flow, wrap, basis, grow), align item, order, align-self
