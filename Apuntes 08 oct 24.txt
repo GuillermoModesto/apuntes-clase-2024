@@ -15,6 +15,8 @@ Arbol DOM:
 |	<h1>...</h1>
 </body>
 
+EL ELEMENTO PADRE ES DOCUMENT, QUE ES EL BODY
+
 Document -> body --> div --> header --> nav
 		 |	 |-> main --> texto
 		 |	 |-> footer --> texto
@@ -30,12 +32,91 @@ Para solucionar esto hay dos maneras:
 	}
 
 	Aquí debajo podemos crear todas las funciones que necesitemos/queramos.
-2. En la etiqueta que llama al script (que SIEMPRE debe estas en el head):
+2. En la etiqueta que llama al script (que SIEMPRE debe estar en el head):
 	<script src="code.js" defer></script>
 
 Moverse por el arbol DOM:
+
+	TODOS LOS METODOS DE ABAJO DEVUELVEN *-*-*-REFERENCIAS-*-*-*
 	let todosLosP = document.getElementsByTagName("p") -> devuelve una colección de todas las etiquetas "p" que hay
 	let todosConNombreTal = document.getElementsByName("tal") -> devuelve una colección de todas las etiquetas con nombre "tal"
-	let todosConClaseTal = document.getElementsClassName("tal") -> devuelve una colección de todas las etiquetas con clase "tal"
+	let todosConClaseTal = document.getElementsByClassName("tal") -> devuelve una colección de todas las etiquetas con clase "tal"
 	let todosConIdTal = document.getElementsById("tal") -> devuelve una colección de todas las etiquetas con clase "tal"
+
+	De JS6:
+	let variable = document.querySelector("selector_CSS") -> referencia a la etiqueta que seleccione ese selector
+	let variable = document.querySelectAll("selector_CSS") -> referencia a todas etiquetas seleccionadas por ese selector
+
+Acceder a atributos:
 	
+	- A la antigua, QUE PUEDE FALLAR, con el punto -> variable_Con_Etiqueta.atributo ...
+	- Bien hecho --> cosa.getAttribute("atributo") <- SIEMPRE devuelve STRING
+		     |-> cosa.setAttribute("atributo", "nuevoValor") 
+	- Atributos que tienen TODAS las etiquetas:
+		- innerHTML -> devuelve todo el contenido de esa etiqueta y sus hijos, el cual puedo modificar (puedo cambiar el HTML, inyectar código...)
+		- innerText -> devuelve todo el texto de esa etiqueta y sus hijos NO respetando cosas especiales del texto, como estacios seguidos y tal. Se lleva con él su estilo de CSS
+		- textContent -> devuelve todo el texto de esa etiqueta y sus hijos respetando cosas raras del texto. NO se lleva con él su estilo CSS`
+
+------ MANEJADORES DE EVENTOS ------
+
+ - Forma fea:
+	<table id="tablita" width="200px" onclick="function(this)">
+	Pasa una referencia al elemento al que se le pone el onclick
+
+function(elemento){
+	elemento.width = 500px;
+}
+
+ - Forma chula 1:
+window.onload = function() {
+	let ele = document.selectElementById("tablita");
+	ele.onclick = nombreFuncion; ------> CREA EL ATRIBUTO onclick EN LA ETIQUETA ASOCIADA (no le pongas los parentesis)
+}
+
+nombreFuncion(){
+	.....
+}
+
+ - Forma chula 2 (mejor):
+window.onload = function() {
+	let ele = document.selectElementById("tablita");
+	ele.onclick = function() {
+		.......
+		ó
+		funcionDeFuera(this);
+	}
+
+	DE ESTA MANERA EL THIS NO FUNCIONA COMO CREES QUE VA A FUNCIONAR PORQUE JS ES UNA PUTA BASURA
+	ele.onclick = () => {
+		.......
+		ó
+		funcionDeFuera(this);
+	}
+}
+
+funcionDeFuera(elemento){
+	.....
+}
+
+------ ACCESO AL CSS ------
+
+	<p style="dedo: red; background-color: yellow;">
+	let dedo = document.getElementsbyTagName("p")[0];
+
+A través del atributo style (que tiene preferencia frente a la hoja de estilos): 
+	
+	dedo.style.color = "blue";
+	dedo.style.backgroundColor = "green"; ----> camel case para los nombres compuestos
+
+Usando el GET:
+	
+	dedo.style.setProperty("background-color", green");
+SET:
+
+	let estilos = window.getComputedStyle(dedo);
+	let letras = estilos.getPropertyValue("font-size");
+
+DETALLE --> cuando accedemos a las propiedades, como por ejemplo: dedo.style.color, hace cosas raras porque es muy tonto.
+	Los colores devuelven valores rgb(0, 0, 0)
+	Los tamaños devuelven valores en pixel.
+	Si sacamos algo que no existe, devolverá una cadena vacía.
